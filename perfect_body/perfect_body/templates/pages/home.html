@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles i18n %} 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Perfect Body</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/structure.css" %}">
+    </head>
+<header>
+    <div class="header_wrapper">    
+        <div>
+            <img src="{% static "images/logo.png" %}">
+        </div>
+        <div>
+            <img src="{% static "images/logo_text.png" %}">
+        </div>
+        <div>
+            <img src="{% static "images/logo.png" %}">
+        </div>
+    </div>
+</header>
+<body>
+    <div class="login_wrapper">
+        <div class="info">
+            <p>Welcome to 'Perfect body'. In case you have no idea how to read a healthy lifestyle, this application would suit you best!
+            </p>
+        </div>
+        <div class="login">
+            <form method="POST" action="/login">
+                {% csrf_token %}
+                <label>
+                    Email: 
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    Password:
+                    <input type="password" name="password">
+                </label>
+                <input type="submit" value="Login">
+                <a href="/registration">or register</a>
+            </form>
+        </div> 
+    </div>
+</body>
+<script src="{% static "js/jquery-2.2.0.min.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
+</html>
